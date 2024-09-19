@@ -71,7 +71,7 @@ form.addEventListener('submit', async (e) => {
 function renderTable(playerList: Players[]) {
     const table = document.getElementById('player-table') as HTMLTableElement;
     table.innerHTML = ''; // מנקה את תוכן הטבלה לפני שמוסיפים שורות חדשות
-    playerList.forEach((player) => {
+    playerList.forEach((player, index) => {
         const row = document.createElement('tr');
         row.innerHTML = `
             <td>${player.playerName}</td>
@@ -80,7 +80,7 @@ function renderTable(playerList: Players[]) {
             <td>${player.twoPercent}%</td>
             <td>${player.threePercent}%</td>
             <td>
-                <button onclick="addplayerToTeam('${player.playerName}')">Add ${player.playerName} to Current Team</button>
+                <button onclick="addplayerToTeam(${index})">Add ${player.playerName} to Current Team</button>
             </td>
         `;
         table.appendChild(row);
@@ -88,13 +88,24 @@ function renderTable(playerList: Players[]) {
 }
 
 
-function addplayerToTeam() {
 
-
-
-
+function addplayerToTeam(index: number) {
+    const newPlayer = playerList[index];
+    let position : string = newPlayer.position;
+    let CurrentDiv = document.getElementById(position);
+   const headers= document.getElementById('card-Tim')?.textContent;
+  
+    if (CurrentDiv) {
+          
+        CurrentDiv.innerHTML = `     
+    <p> ${newPlayer.playerName} </p>
+    <p> ${newPlayer.position} </p>
+    <p> ${newPlayer.points} </p>
+    <p> ${newPlayer.twoPercent} </p>
+    <p> ${newPlayer.threePercent} </p> 
+    `
+    }
 }
-
 
 
 

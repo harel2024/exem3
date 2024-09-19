@@ -8,7 +8,7 @@
 /* Basic styles for body */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: #ffffff;
     color:  #002F87;
 }
 
@@ -49,9 +49,9 @@ h2 {
     margin-bottom: 2rem;
 }
 
-.positions button {
-    background-color: white;
-    border: 1px solid #ccc;
+.positions div {
+    background-color:  #f4f4f4;
+    /* border: 1px solid #ccc; */
     border-radius: 8px;
     padding: 1rem;
     width: 150px;
@@ -136,4 +136,40 @@ tbody td {
 
 tbody tr:hover {
     background-color: #f0f0f0;
+}
+
+#PG  {
+    text-align: center;
+  
+ width: 130px;
+ color: #000;
+ font-size: smaller;
+}
+
+#SG  {
+
+ width: 130px;
+ color: #000;
+ font-size: smaller;
+}
+#SF  {  
+ width: 130px;
+ color: #000;
+ font-size: smaller;
+}
+#PF  {
+ width: 130px;
+ color: #000;
+ font-size: smaller;
+}
+
+#C  {
+ width: 100px;
+ color: #000;
+ font-size: smaller;
+}
+#position {
+    text-align: center;
+ 
+    width: 650px;
 }

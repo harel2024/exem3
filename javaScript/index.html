@@ -16,11 +16,21 @@
         <section id="fantasy-team">
             <h2>My Fantasy Team</h2>
             <div class="positions" id="card-Tim">
-                <div>Point Guard</div>
-                <div>Shooting Guard</div>
-                <div>Small Forward</div>
-                <div>Power Forward</div>
-                <div>Center</div>
+                <div id="aut-div">Point Guard
+                    <div class="position" id="PG"></div>
+                </div>
+              <div>Shooting Guard
+                <div class="position" id="SG"></div>
+              </div>
+              <div>Small Forward
+                <div class="position" id="SF"></div>
+              </div>
+              <div>Power Forward
+                <div class="position" id="PF"></div>
+              </div>
+            <div>Center
+                <div class="position" id="C"></div>
+            </div>
             </div>
         </section>
 
@@ -35,11 +45,11 @@
                     <option value="C">C</option>
                 </select>
                 <div class="sliders">
-                    <!-- <label for="points">Points</label> -->
+                    <label for="points">Points</label>
                     <input type="range" id="points" min="0" max="20000" required>
-                    <!-- <label for="fg">Field Goal %</label> -->
+                    <label for="fg">Field Goal %</label>
                     <input type="range" id="fg" min="0" max="100" required>
-                    <!-- <label for="3p">3-Point %</label> -->
+                    <label for="3p">3-Point %</label>
                     <input type="range" id="3p" min="0" max="100" required>
                 </div>
                 <button type="submit">Search Player</button>
@@ -60,7 +70,7 @@
                     </tr>
                 </thead>
                 <tbody id="player-table">
-                    <!-- Players will be added here -->
+              
                 </tbody >
             </table>
         </section>
