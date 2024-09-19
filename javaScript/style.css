@@ -1,4 +1,4 @@
-/* Reset basic styles */
+
 * {
     margin: 0;
     padding: 0;
@@ -25,7 +25,6 @@ h1 {
     font-weight: bold;
 }
 
-/* Main container */
 main {
     max-width: 900px;
     margin: 2rem auto;
@@ -35,14 +34,12 @@ main {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Section headings */
 h2 {
     font-size: 1.75rem;
     margin-bottom: 1rem;
     text-align: center;
 }
 
-/* Button group for fantasy team positions */
 .positions {
     display: flex;
     justify-content: space-around;
@@ -65,7 +62,6 @@ h2 {
     background-color: #e0e0e0;
 }
 
-/* Search section */
 .search-box {
     background-color: #f8f8f8;
     padding: 1.5rem;
@@ -91,16 +87,16 @@ select {
 
 .sliders label {
     font-weight: bold;
+    
 }
-
 input[type="range"] {
     width: 80%;
 }
-
 button {
     background-color: #002F87;
     color: white;
     border: none;
+    width: 200px;
     padding: 0.75rem 1.5rem;
     font-size: 1rem;
     font-weight: bold;
@@ -113,12 +109,10 @@ button:hover {
     background-color: #001f5c;
 }
 
-/* Table for search results */
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 2rem;
-    
+    margin-top: 2rem;   
 }
 
 thead th {
@@ -133,21 +127,17 @@ tbody td {
     padding: 1rem;
     text-align: center;
 }
-
 tbody tr:hover {
     background-color: #f0f0f0;
 }
-
 #PG  {
-    text-align: center;
-  
+    text-align: center; 
  width: 130px;
  color: #000;
  font-size: smaller;
 }
 
 #SG  {
-
  width: 130px;
  color: #000;
  font-size: smaller;
@@ -170,6 +160,9 @@ tbody tr:hover {
 }
 #position {
     text-align: center;
- 
     width: 650px;
+}
+p{
+    font-size: 15px;
+    padding: 5px;
 }

@@ -9,13 +9,6 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 const baseUrl = 'https://nbaserver-q21u.onrender.com/api/filter/';
-//ליצןר אובייקט
-const player = {
-    position: 'PG',
-    twoPercent: 40,
-    threePercent: 40,
-    points: 100
-};
 //Post 
 function allPlayers(newPlayers) {
     return __awaiter(this, void 0, void 0, function* () {
@@ -31,20 +24,17 @@ function allPlayers(newPlayers) {
         return addedPlayer;
     });
 }
-allPlayers(player);
 let playerList = [];
-//////////
-// שליחת הטופס לשרת
 const cardTim = document.getElementById('card-Tim');
 const form = document.getElementById('search-form');
 const playerTable = document.getElementById('player-table');
+// שליחת הטופס לשרת
 form.addEventListener('submit', (e) => __awaiter(void 0, void 0, void 0, function* () {
     e.preventDefault();
     const position = document.getElementById('position').value;
     const points = Number(document.getElementById('points').value);
     const twoPercent = Number(document.getElementById('fg').value);
     const threePercent = Number(document.getElementById('3p').value);
-    // const playerName = (document.getElementById('playerName') as HTMLInputElement).value;
     const newPlayer = {
         position,
         twoPercent,
@@ -56,7 +46,7 @@ form.addEventListener('submit', (e) => __awaiter(void 0, void 0, void 0, functio
     renderTable(playerList);
     console.log(playerList);
 }));
-//להציג את הרשימה בטבלה
+//מציגה  את הרשימה בטבלה
 function renderTable(playerList) {
     const table = document.getElementById('player-table');
     table.innerHTML = ''; // מנקה את תוכן הטבלה לפני שמוסיפים שורות חדשות
@@ -75,19 +65,20 @@ function renderTable(playerList) {
         table.appendChild(row);
     });
 }
+//פונקציה שמכניסה את השחקן הנבחר לכרטיס המתאים
 function addplayerToTeam(index) {
-    var _a;
     const newPlayer = playerList[index];
     let position = newPlayer.position;
     let CurrentDiv = document.getElementById(position);
-    const headers = (_a = document.getElementById('card-Tim')) === null || _a === void 0 ? void 0 : _a.textContent;
-    if (CurrentDiv) {
+    if (CurrentDiv == null) {
+        return;
+    }
+    else if (CurrentDiv.innerHTML != null) {
         CurrentDiv.innerHTML = `     
-    <p> ${newPlayer.playerName} </p>
-    <p> ${newPlayer.position} </p>
-    <p> ${newPlayer.points} </p>
-    <p> ${newPlayer.twoPercent} </p>
-    <p> ${newPlayer.threePercent} </p> 
-    `;
+    <p>${newPlayer.playerName} </p>
+     <p>Two Percent:${newPlayer.twoPercent}% </p>
+    <p>Three Percent: ${newPlayer.threePercent}% </p> 
+      <p>Points: ${newPlayer.points} </p>
+    `;
     }
 }

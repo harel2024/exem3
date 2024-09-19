@@ -8,15 +8,6 @@ interface Players {
     playerName?: string;
 }
 
-//ליצןר אובייקט
-const player: Players = {
-    position: 'PG',
-    twoPercent: 40,
-    threePercent: 40,
-    points: 100
-}
-
-
 //Post 
 async function allPlayers(newPlayers: Players): Promise<Players[]> {
     const response = await fetch(baseUrl, {
@@ -32,16 +23,15 @@ async function allPlayers(newPlayers: Players): Promise<Players[]> {
     return addedPlayer;
 }
 
-allPlayers(player);
+
 
 let playerList: Players[] = [];
-//////////
-// שליחת הטופס לשרת
+
 const cardTim = document.getElementById('card-Tim') as HTMLDivElement;
 const form = document.getElementById('search-form') as HTMLFormElement;
 const playerTable = document.getElementById('player-table') as HTMLDivElement;
 
-
+// שליחת הטופס לשרת
 form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
@@ -49,8 +39,6 @@ form.addEventListener('submit', async (e) => {
     const points = Number((document.getElementById('points') as HTMLInputElement).value);
     const twoPercent = Number((document.getElementById('fg') as HTMLInputElement).value);
     const threePercent = Number((document.getElementById('3p') as HTMLInputElement).value);
-   
-    // const playerName = (document.getElementById('playerName') as HTMLInputElement).value;
 
     const newPlayer: Players = {
         position,
@@ -63,11 +51,9 @@ form.addEventListener('submit', async (e) => {
     renderTable(playerList);
     console.log(playerList);
    
-
 });
 
-//להציג את הרשימה בטבלה
-
+//מציגה  את הרשימה בטבלה
 function renderTable(playerList: Players[]) {
     const table = document.getElementById('player-table') as HTMLTableElement;
     table.innerHTML = ''; // מנקה את תוכן הטבלה לפני שמוסיפים שורות חדשות
@@ -88,25 +74,26 @@ function renderTable(playerList: Players[]) {
 }
 
 
-
+//פונקציה שמכניסה את השחקן הנבחר לכרטיס המתאים
 function addplayerToTeam(index: number) {
     const newPlayer = playerList[index];
     let position : string = newPlayer.position;
     let CurrentDiv = document.getElementById(position);
-   const headers= document.getElementById('card-Tim')?.textContent;
   
-    if (CurrentDiv) {
-          
+    if (CurrentDiv== null) {
+        return;
+    }
+    else if (CurrentDiv.innerHTML != null) {
         CurrentDiv.innerHTML = `     
-    <p> ${newPlayer.playerName} </p>
-    <p> ${newPlayer.position} </p>
-    <p> ${newPlayer.points} </p>
-    <p> ${newPlayer.twoPercent} </p>
-    <p> ${newPlayer.threePercent} </p> 
-    `
-    }
+    <p>${newPlayer.playerName} </p>
+     <p>Two Percent:${newPlayer.twoPercent}% </p>
+    <p>Three Percent: ${newPlayer.threePercent}% </p> 
+      <p>Points: ${newPlayer.points} </p>
+    `
+    }
+          
 }
-
+ 
 
 
 
