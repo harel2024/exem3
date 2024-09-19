@@ -53,25 +53,50 @@ form.addEventListener('submit', async (e) => {
    
 });
 
+
+
 //מציגה  את הרשימה בטבלה
 function renderTable(playerList: Players[]) {
     const table = document.getElementById('player-table') as HTMLTableElement;
-    table.innerHTML = ''; // מנקה את תוכן הטבלה לפני שמוסיפים שורות חדשות
+    table.innerHTML = ''; // 
+    
     playerList.forEach((player, index) => {
-        const row = document.createElement('tr');
-        row.innerHTML = `
-            <td>${player.playerName}</td>
-            <td>${player.position}</td>
-            <td>${player.points}</td>
-            <td>${player.twoPercent}%</td>
-            <td>${player.threePercent}%</td>
-            <td>
-                <button onclick="addplayerToTeam(${index})">Add ${player.playerName} to Current Team</button>
-            </td>
-        `;
+        const row = document.createElement('tr'); // יצירת שורה חדשה
+
+        // יצירת  שדה של השחקן
+        const nameCell = document.createElement('td');
+        nameCell.textContent = player.playerName?.toString() || '';
+        row.appendChild(nameCell);
+
+        const positionCell = document.createElement('td');
+        positionCell.textContent = player.position;
+        row.appendChild(positionCell);
+
+        const pointsCell = document.createElement('td');
+        pointsCell.textContent = String(player.points);
+        row.appendChild(pointsCell);
+
+        const twoPercentCell = document.createElement('td');
+        twoPercentCell.textContent = `${player.twoPercent}%`;
+        row.appendChild(twoPercentCell);
+
+        const threePercentCell = document.createElement('td');
+        threePercentCell.textContent = `${player.threePercent}%`;
+        row.appendChild(threePercentCell);
+
+        const actionCell = document.createElement('td');
+        const addButton = document.createElement('button');
+        addButton.textContent = `Add ${player.playerName} to Current Team`;
+        addButton.onclick = () => addplayerToTeam(index); 
+        actionCell.appendChild(addButton);
+
+        row.appendChild(actionCell);
+
+      
         table.appendChild(row);
     });
 }
+
 
 
 //פונקציה שמכניסה את השחקן הנבחר לכרטיס המתאים
@@ -90,8 +115,7 @@ function addplayerToTeam(index: number) {
     <p>Three Percent: ${newPlayer.threePercent}% </p> 
       <p>Points: ${newPlayer.points} </p>
     `
-    }
-          
+    }         
 }
  
 
@@ -110,6 +134,28 @@ function addplayerToTeam(index: number) {
 
 
 
+
+
+
+//מציגה  את הרשימה בטבלה
+// function renderTable(playerList: Players[]) {
+//     const table = document.getElementById('player-table') as HTMLTableElement;
+//     table.innerHTML = ''; // מנקה את תוכן הטבלה לפני שמוסיפים שורות חדשות
+//     playerList.forEach((player, index) => {
+//         const row = document.createElement('tr');
+//         row.innerHTML = `
+//             <td>${player.playerName}</td>
+//             <td>${player.position}</td>
+//             <td>${player.points}</td>
+//             <td>${player.twoPercent}%</td>
+//             <td>${player.threePercent}%</td>
+//             <td>
+//                 <button onclick="addplayerToTeam(${index})">Add ${player.playerName} to Current Team</button>
+//             </td>
+//         `;
+//         table.appendChild(row);
+//     });
+// }
 
 
 
