@@ -1,0 +1,139 @@
+/* Reset basic styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Basic styles for body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color:  #002F87;
+}
+
+/* Header styling */
+header {
+    background-color: #002F87;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+h1 {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Main container */
+main {
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Section headings */
+h2 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+/* Button group for fantasy team positions */
+.positions {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 2rem;
+}
+
+.positions button {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 1rem;
+    width: 150px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.positions button:hover {
+    background-color: #e0e0e0;
+}
+
+/* Search section */
+.search-box {
+    background-color: #f8f8f8;
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+select {
+    width: 100px;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.sliders {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+}
+
+.sliders label {
+    font-weight: bold;
+}
+
+input[type="range"] {
+    width: 80%;
+}
+
+button {
+    background-color: #002F87;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+button:hover {
+    background-color: #001f5c;
+}
+
+/* Table for search results */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 2rem;
+    
+}
+
+thead th {
+    background-color: #D11A2A;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+tbody td {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    text-align: center;
+}
+
+tbody tr:hover {
+    background-color: #f0f0f0;
+}

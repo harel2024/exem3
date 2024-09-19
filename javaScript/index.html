@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NBA Fantasy</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>NBA FANTASY 2014-2024</h1>
+    </header>
+
+    <main>
+        <section id="fantasy-team">
+            <h2>My Fantasy Team</h2>
+            <div class="positions" id="card-Tim">
+                <div>Point Guard</div>
+                <div>Shooting Guard</div>
+                <div>Small Forward</div>
+                <div>Power Forward</div>
+                <div>Center</div>
+            </div>
+        </section>
+
+        <section id="player-search">
+            <h2>NBA Player Search</h2>
+            <form class="search-box" id="search-form">
+                <select id="position">
+                    <option value="PG">PG</option>
+                    <option value="SG">SG</option>
+                    <option value="SF">SF</option>
+                    <option value="PF">PF</option>
+                    <option value="C">C</option>
+                </select>
+                <div class="sliders">
+                    <!-- <label for="points">Points</label> -->
+                    <input type="range" id="points" min="0" max="20000" required>
+                    <!-- <label for="fg">Field Goal %</label> -->
+                    <input type="range" id="fg" min="0" max="100" required>
+                    <!-- <label for="3p">3-Point %</label> -->
+                    <input type="range" id="3p" min="0" max="100" required>
+                </div>
+                <button type="submit">Search Player</button>
+            </div>
+            </form>
+        </section>
+
+        <section id="results">
+            <table >
+                <thead >
+                    <tr>
+                        <th>Player</th>
+                        <th>Position</th>
+                        <th>Points</th>
+                        <th>FG%</th>
+                        <th>3P%</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="player-table">
+                    <!-- Players will be added here -->
+                </tbody >
+            </table>
+        </section>
+    </main>
+<script src="script.js"></script>
+</body>
+</html>
